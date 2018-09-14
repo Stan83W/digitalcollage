@@ -23,7 +23,7 @@ function placeImage(x, y) {
   }
 }
 
-document.addEventListener("mouseover", function (event) {
+document.addEventListener("click", function (event) {
 
   event.preventDefault()
   placeImage(event.pageX, event.pageY)
