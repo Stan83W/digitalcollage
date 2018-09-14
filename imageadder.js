@@ -8,8 +8,28 @@ function placeImage(x, y) {
 
   const nextImage = images[i]
 
+  const img = document.createElement("img")
+  img.setAttribute("src", nextImage)
+  img.style.left = x + "px"
+  img.style.top = y + "px"
+
+  document.body.appendChild(img)
+
+  i = i + 1
+
+  if (i >= images.length) {
+    i = 0
+  }
 }
 
-placeImage(500, 400)
-placeImage(400, 500)
-placeImage(600, 300)
+document.addEventListener("click", function (event) {
+
+  event.preventDefault()
+  placeImage(event.pageX, event.pageY)
+})
+
+document.addEventListener("touchend", function (event) {
+
+  event.preventDefault()
+  placeImage(event.pageX, event.pageY)
+})
